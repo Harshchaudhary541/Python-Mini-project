@@ -1,0 +1,15 @@
+import random
+def guess_number():
+    X = random.randint(1, 10)
+    print("Welcome to the Number Guessing Game!")
+    print("I've picked a number between 1 and 10. Try to find it!")
+    while True:
+        Y = int(input("Enter your find: "))
+        if Y < X:
+            print("Too low! Try again.")
+        elif Y > X:
+            print("Too high! Try again.")
+        else:
+            print("Congratulations! You've guessed the correct number!")
+            break
+guess_number()
