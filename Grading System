@@ -1,0 +1,20 @@
+def marks(X):
+    if X > 100:
+        return 'Invalid input'
+    elif X >= 90:
+        return 'O'
+    elif X >=80:
+        return 'A+'
+    elif X >= 70:
+        return 'A'
+    elif X >= 60:
+        return 'B'
+    elif X >= 50:
+        return 'C'
+    elif X >= 40:
+        return 'D'
+    else:
+        return 'F'
+X = float(input("Enter the student's Marks out of 100: "))
+grade = marks(X)
+print("The student's grade is:", grade)
