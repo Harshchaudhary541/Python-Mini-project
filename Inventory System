@@ -1,0 +1,52 @@
+class Inventory:
+    def __init__(self):
+        self.inventory = {}
+    def add_item(self, item_name, quantity):
+        if item_name in self.inventory:
+            self.inventory[item_name] += quantity
+        else:
+            self.inventory[item_name] = quantity
+        print(f"{quantity} {item_name}(s) added to inventory.")
+    def remove_item(self, item_name, quantity):
+        if item_name in self.inventory:
+            if self.inventory[item_name] >= quantity:
+                self.inventory[item_name] -= quantity
+                print(f"{quantity} {item_name}(s) removed from inventory.")
+            else:
+                print("Insufficient quantity in inventory.")
+        else:
+            print("Item not found in inventory.")
+    def check_quantity(self, item_name):
+        if item_name in self.inventory:
+            print(f"Quantity of {item_name} in inventory: {self.inventory[item_name]}")
+        else:
+            print("Item not found in inventory.")
+    def display_inventory(self):
+        print("Inventory:")
+        for item_name, quantity in self.inventory.items():
+            print(f"{item_name}: {quantity}")
+def main():
+    inventory_system = Inventory()
+    while True:
+        print("\n1. Add Item\n2. Remove Item\n3. Check Quantity\n4. Display Inventory\n5. Exit")
+        choice = input("Enter your choice: ")
+        if choice == "1":
+            item_name = input("Enter item name: ")
+            quantity = int(input("Enter quantity to add: "))
+            inventory_system.add_item(item_name, quantity)
+        elif choice == "2":
+            item_name = input("Enter item name: ")
+            quantity = int(input("Enter quantity to remove: "))
+            inventory_system.remove_item(item_name, quantity)
+        elif choice == "3":
+            item_name = input("Enter item name: ")
+            inventory_system.check_quantity(item_name)
+        elif choice == "4":
+            inventory_system.display_inventory()
+        elif choice == "5":
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+if __name__ == "__main__":
+    main()
