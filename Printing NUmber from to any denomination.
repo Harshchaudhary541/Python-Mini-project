@@ -1,0 +1,12 @@
+start = int(input("Enter the starting number: "))
+end = int(input("Enter the ending number: "))
+form=int(input("Enter ther type of way you want to get it printed, 1  for horizontal and 2 for vertical:  "))
+if(form==1):
+    print("Numbers in horizontal form:")
+    for num in range(start, end + 1):
+        print(num, end=" ")  
+        print()  
+elif(form==2):
+    print("Numbers in vertical form:")
+    for num in range(start, end + 1):
+        print(num)
